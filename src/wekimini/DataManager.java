@@ -20,6 +20,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Random;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.EventListenerList;
@@ -1074,5 +1075,14 @@ public class DataManager {
         });
 
     }
+    
+    public static int randInt(int min, int max) {
+        
+        Random rand;
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+
+        return randomNum;
+    }
 
 }
+
