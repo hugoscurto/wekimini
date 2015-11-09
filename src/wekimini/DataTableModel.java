@@ -80,6 +80,24 @@ public class DataTableModel extends AbstractTableModel {
         int row = m.getNumExamples()-1;
         fireTableRowsInserted(row, row);
     }
+    
+    public void addRandomRow(int recordingRound) {
+
+        double[] inputs = new double[numInputs];
+        double[] outputs = new double[numOutputs];
+        boolean[] mask = new boolean[numOutputs];
+        
+        for( int i = 0 ; i < inputs.length ; i++ ) { 
+          inputs[i] = m.randInt(0,127);
+        }
+        for( int i = 0 ; i < outputs.length ; i++ ) { 
+          outputs[i] = m.randInt(0,127);
+        }
+        
+        m.addToTraining(inputs, outputs, mask, recordingRound);
+        int row = m.getNumExamples()-1;
+        fireTableRowsInserted(row, row);
+    }
 
     @Override
     public String getColumnName(int col) {
