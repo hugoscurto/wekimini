@@ -194,7 +194,8 @@ public class DatasetViewer extends javax.swing.JFrame {
 }//GEN-LAST:event_buttonDeleteActionPerformed
 
     private void buttonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddActionPerformed
-        model.addRow(-1); //Use -1 as "recording round" for right now
+        //model.addRow(-1); //Use -1 as "recording round" for right now
+        model.addRandomRow(-1); //Use -1 as "recording round" for right now
        /* if (WekinatorRunner.isLogging()) {
          Plog.log(Msg.DATA_VIEWER_ADD_ROW);
          } */
